@@ -341,13 +341,13 @@ input, textarea, button {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 44px;
+  margin-right: 45px;
   text-transform: uppercase;
   font-size: 14px;
 }
 
 .header-content__item + .header-content__item {
-  margin-left: 23px;
+  margin-left: 22px;
 }
 
 .header-content__phone {
@@ -403,6 +403,10 @@ input, textarea, button {
 }
 
 /*MAIN*/
+.main {
+  overflow-x: hidden;
+}
+
 .main-frst {
   background: #fafafc 50% 50% no-repeat;
   -webkit-background-size: cover;
@@ -570,6 +574,48 @@ input, textarea, button {
   align-items: flex-start;
 }
 
+.main-thrd__card.animation .card-title {
+  -webkit-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.main-thrd__card.animation .card-img {
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+.main-thrd__card.animation .card-form {
+  -webkit-transform: translateX(-70px);
+  -ms-transform: translateX(-70px);
+  transform: translateX(-70px);
+  opacity: 0;
+}
+
+.main-thrd__card.main-thrd__card--reverse.animation .card-title {
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+.main-thrd__card.main-thrd__card--reverse.animation .card-img {
+  -webkit-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.main-thrd__card.main-thrd__card--reverse.animation .card-form {
+  -webkit-transform: translateX(70px);
+  -ms-transform: translateX(70px);
+  transform: translateX(70px);
+  opacity: 0;
+}
+
 .main-thrd__card.main-thrd__card--reverse .card-title {
   margin-left: auto;
 }
@@ -599,7 +645,13 @@ input, textarea, button {
   text-transform: uppercase;
   margin: 0 0 -30px -1px;
   position: relative;
+  z-index: 1;
   background: #fff;
+  -webkit-transition: opacity .4s, -webkit-transform .5s;
+  transition: opacity .4s, -webkit-transform .5s;
+  -o-transition: transform .5s, opacity .4s;
+  transition: transform .5s, opacity .4s;
+  transition: transform .5s, opacity .4s, -webkit-transform .5s;
 }
 
 .main-thrd__card .card-img {
@@ -608,6 +660,11 @@ input, textarea, button {
   background: 50% 50% no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+  -webkit-transition: opacity .4s, -webkit-transform .5s;
+  transition: opacity .4s, -webkit-transform .5s;
+  -o-transition: transform .5s, opacity .4s;
+  transition: transform .5s, opacity .4s;
+  transition: transform .5s, opacity .4s, -webkit-transform .5s;
 }
 
 .main-thrd__card .card-form {
@@ -626,6 +683,11 @@ input, textarea, button {
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 66px 65px 40px 65px;
+  -webkit-transition: opacity .4s, -webkit-transform .5s;
+  transition: opacity .4s, -webkit-transform .5s;
+  -o-transition: transform .5s, opacity .4s;
+  transition: transform .5s, opacity .4s;
+  transition: transform .5s, opacity .4s, -webkit-transform .5s;
 }
 
 .main-thrd__card .card-form .title {
@@ -686,8 +748,44 @@ input, textarea, button {
   justify-content: space-between;
 }
 
+.main-fourth .card-holder.animation .main-fourth__card {
+  -webkit-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
+  opacity: 0;
+}
+
 .main-fourth__card {
   width: 200px;
+  -webkit-transition: opacity .6s,-webkit-transform .5s;
+  transition: opacity .6s,-webkit-transform .5s;
+  -o-transition: transform .5s,opacity .6s;
+  transition: transform .5s,opacity .6s;
+  transition: transform .5s,opacity .6s,-webkit-transform .5s;
+}
+
+.main-fourth__card:nth-child(1) {
+  -webkit-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.main-fourth__card:nth-child(2) {
+  -webkit-transition-delay: .15s;
+  -o-transition-delay: .15s;
+  transition-delay: .15s;
+}
+
+.main-fourth__card:nth-child(4) {
+  -webkit-transition-delay: .25s;
+  -o-transition-delay: .25s;
+  transition-delay: .25s;
+}
+
+.main-fourth__card:nth-child(5) {
+  -webkit-transition-delay: .35s;
+  -o-transition-delay: .35s;
+  transition-delay: .35s;
 }
 
 .main-fourth__card .card-img {
@@ -871,10 +969,34 @@ input, textarea, button {
   margin: auto;
 }
 
+.main-seventh__form.animation .form-input {
+  -webkit-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  transform: translateX(-100px);
+}
+
+.main-seventh__form.animation .form-input + .form-input {
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px);
+}
+
+.main-seventh__form.animation .standart-btn {
+  -webkit-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  transform: translateY(50px);
+}
+
 .main-seventh__form .form-input {
   display: block;
   margin: 0 auto 30px;
   width: 500px;
+  -webkit-transition: opacity .7s ,-webkit-transform .7s;
+  transition: opacity .7s ,-webkit-transform .7s;
+  -o-transition: transform .7s ,opacity .7s;
+  transition: transform .7s ,opacity .7s;
+  transition: transform .7s ,opacity .7s ,-webkit-transform .7s;
+  overflow: hidden;
 }
 
 .main-seventh__form .text {
@@ -910,6 +1032,11 @@ input, textarea, button {
 .main-seventh__form .standart-btn {
   height: 54px;
   margin: 0 auto -27px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
 /*FOOTER*/

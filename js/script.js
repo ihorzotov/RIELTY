@@ -3,7 +3,7 @@ $(document).ready(function () {
     event.preventDefault();
     
     var id  = $(this).attr('href'),
-      top = $(id).offset().top - 5;
+      top = $(id).offset().top - 105;
       
         $('body,html').animate({scrollTop: top}, 500);
   });
@@ -22,4 +22,25 @@ $(document).ready(function () {
       $('.thx-block').removeClass('active');
     }, 3000);
   });
-})
+  
+jQuery(function($) {
+  var doAnimations = function() {
+    
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.animation');
+    
+    // Check all animatables and animate them if necessary
+    $animatables.each(function(i) {
+      var $animatable = $(this);
+      if (($animatable.offset().top + $animatable.height() - 300) < offset) {
+        $animatable.removeClass('animation');
+      }
+    });
+  };
+  
+  // Hook doAnimations on scroll, and trigger a scroll
+  $(window).on('scroll', doAnimations);
+  $(window).trigger('scroll');
+
+});
+});
