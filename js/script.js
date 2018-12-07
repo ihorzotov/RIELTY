@@ -7,6 +7,7 @@ $(document).ready(function () {
       
         $('body,html').animate({scrollTop: top}, 500);
   });
+
   $(window).scroll(function(){
     var winTop = $(window).scrollTop();
 
@@ -16,29 +17,52 @@ $(document).ready(function () {
       $("body").removeClass("sticky-header");
     }
   });
+
   $('.main-seventh__form .standart-btn').click(function(){
     $('.thx-block').addClass('active');
     setTimeout(function(){
       $('.thx-block').removeClass('active');
     }, 3000);
   });
-  
+
+function NumCounter() {
+  $('.main-sixth__card').each(function(key,item){
+    var numbStart = parseInt($(item).attr('data-num'));
+    console.log(numbStart)
+    $({numberValue: 0}).animate({numberValue: numbStart}, {
+      duration: 1000,
+      easing: "linear",
+      
+      step: function(val) {
+        // $(item).find('.num').html(Math.ceil(val));
+        $(item).find('.num').html(val.toFixed(0));
+      }
+    });
+  });
+};
+
 jQuery(function($) {
   var doAnimations = function() {
-    
     var offset = $(window).scrollTop() + $(window).height(),
-        $animatables = $('.animation');
-    
-    // Check all animatables and animate them if necessary
+        $animatables = $('.animation'),
+        jsCounter = $('.main-sixth__card.js-counter');
+
+    jsCounter.each(function(i) {
+      var $animatable = $(this);
+      if (($animatable.offset().top + $animatable.height() - 300) < offset) {
+        jsCounter.removeClass('js-counter');
+        NumCounter();
+      }
+    });
     $animatables.each(function(i) {
       var $animatable = $(this);
       if (($animatable.offset().top + $animatable.height() - 300) < offset) {
         $animatable.removeClass('animation');
       }
     });
+    
   };
-  
-  // Hook doAnimations on scroll, and trigger a scroll
+
   $(window).on('scroll', doAnimations);
   $(window).trigger('scroll');
 
