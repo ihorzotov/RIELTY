@@ -341,13 +341,13 @@ input, textarea, button {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 50px;
+  margin-right: 44px;
   text-transform: uppercase;
   font-size: 14px;
 }
 
 .header-content__item + .header-content__item {
-  margin-left: 29px;
+  margin-left: 23px;
 }
 
 .header-content__phone {
