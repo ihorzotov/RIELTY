@@ -249,9 +249,11 @@ input, textarea, button {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-transition: background .3s , color .3s;
-  -o-transition: background .3s , color .3s;
-  transition: background .3s , color .3s;
+  -webkit-transition: background-color .3s , color .3s , -webkit-box-shadow .2s;
+  transition: background-color .3s , color .3s , -webkit-box-shadow .2s;
+  -o-transition: background-color .3s , color .3s , box-shadow .2s;
+  transition: background-color .3s , color .3s , box-shadow .2s;
+  transition: background-color .3s , color .3s , box-shadow .2s , -webkit-box-shadow .2s;
 }
 
 .block-title {
@@ -1132,11 +1134,11 @@ input, textarea, button {
 .main-seventh__form .standart-btn {
   height: 54px;
   margin: 0 auto -27px;
-  -webkit-transition: background .3s ,-webkit-transform 1s;
-  transition: background .3s ,-webkit-transform 1s;
-  -o-transition: transform 1s ,background .3s;
-  transition: transform 1s ,background .3s;
-  transition: transform 1s ,background .3s ,-webkit-transform 1s;
+  -webkit-transition: background .3s, -webkit-transform 1s ,-webkit-box-shadow .2s;
+  transition: background .3s, -webkit-transform 1s ,-webkit-box-shadow .2s;
+  -o-transition: transform 1s ,background .3s, box-shadow .2s;
+  transition: transform 1s ,background .3s, box-shadow .2s;
+  transition: transform 1s ,background .3s, box-shadow .2s ,-webkit-transform 1s ,-webkit-box-shadow .2s;
 }
 
 /*FOOTER*/
@@ -1279,10 +1281,17 @@ input, textarea, button {
   }
   .standart-btn:hover {
     background: #f35726;
+    background-image: -webkit-linear-gradient(90deg, #e34715 0%, #ff6433 100%);
+    background-image: -ms-linear-gradient(90deg, #e34715 0%, #ff6433 100%);
+    -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
   }
   .main-sixth__bottom .standart-btn:hover {
     background: #44acea;
     color: #fff;
+    -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+    background-image: none;
   }
   .policy .link:hover {
     color: #04588a;
